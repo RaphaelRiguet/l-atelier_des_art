@@ -1,0 +1,232 @@
+/* NAV */
+
+.nav{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #1a1a1a;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav a{
+    color: #999;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.nav a:hover{
+    color: #fff;
+}
+
+.navbar{
+    font-size: 22px;
+    color: #c8a96e;
+    font-weight: bold;
+}
+
+/* HERO */
+
+.hero {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    color: #ccc;
+    background: rgba(0,0,0,0.4);
+    padding: 20px;
+}
+
+.hero-content h1{
+    font-size: 36px;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero-content h2{
+    color: #ddd;
+    font-size: 16px;
+}
+
+/* CAROUSEL */
+
+.carousel{
+    margin: 40px 0;
+    background: #111;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    min-width: 100%;
+}
+
+.carousel-slide img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.carousel-slide div{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-controls div{
+    display: flex;
+    gap: 8px;
+    align-self: flex-end;
+    padding: 10px;
+    margin-top: 23%;
+}
+
+.carousel-btn {
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.carousel-dots{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #888;
+    display: inline-block;
+}
+
+.carousel-active{
+    background: #fff;
+}
+
+.expo{
+    padding: 0 40px 40px;
+}
+
+.expo h2{
+    font-size: 28px;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+}
+
+/* CARD */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 40px;
+}
+
+.card {
+    border: 1px solid #eee;
+    overflow: hidden;
+}
+
+.card img {
+    width: 60%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-desc{
+    padding: 15px;
+}
+
+.card-desc h3{
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.card-desc h4{
+    color: #1a1a1a;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.card-desc a{
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* CITATION */
+
+.quote{
+    background: #f5f0e8;
+    padding: 40px;
+    text-align: center;
+    margin: 0 40px 40px;
+}
+
+.quote p{
+    font-size: 20px;
+    color: #2a2a2a;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.quote div{
+    color: #2a2a2a;
+    font-size: 13px;
+}
+
+.actualite{
+    padding: 0 40px 60px;
+}
+
+.actualite h2{
+    font-size: 28px;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+}
+
+.actualite div{
+    color: #666;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.actualite span{
+    color: #1a1a1a;
+}

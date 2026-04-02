@@ -1,153 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">  <!--Ajout du paramètre "lang"-->
 <head>
   <meta charset="UTF-8">
   <title>L'Atelier des Arts</title>
-  <!-- ERREUR : lang absent sur <html> -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
 
-  <!-- ERREUR S-02 : <div> au lieu de <header> -->
-  <div class="nav" style="position: sticky; top: 0; z-index: 50;">
-    <!-- ERREUR S-01 : <div> au lieu de <nav> -->
-    <div style="font-size: 22px; color: #c8a96e; font-weight: bold;">L'Atelier des Arts</div>
+  <header class="nav">  <!--Ajout de la class "nav" et suppression du css dans la balise-->
+
+    <nav class="navbar">L'Atelier des Arts</nav> <!--Ajout de la class navbar et suppression du css dans la balise-->
     <div>
-      <a href="index.html" style="color: #fff;">Accueil</a>
+      <a href="index.html">Accueil</a>
       <a href="expositions.html">Expositions</a>
       <a href="billetterie.html">Billetterie</a>
       <a href="agenda.html">Agenda</a>
       <a href="apropos.html">À propos</a>
     </div>
-    <!-- ERREUR : pas de lien d'évitement -->
-  </div>
 
-  <!-- ERREUR S-04 : <div> au lieu de <main> -->
-  <div id="contenu">
+  </header>
+
+
+  <main id="contenu"> <!--Changement de la balise "div" en "main"-->
 
     <!-- HERO -->
-    <div class="hero" style="margin-bottom: 40px;">
-      <!-- ERREUR I-02 : alt non descriptif -->
-      <img src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=1400" alt="image">
-      <div class="hero-content" style="background: rgba(0,0,0,0.4); padding: 20px;">
-        <!-- ERREUR : pas de H1, titre en div stylé -->
-        <div style="font-size: 36px; color: #fff; font-weight: bold; margin-bottom: 10px;">Bienvenue au musée</div>
-        <div style="color: #ddd; font-size: 16px;">Art contemporain • Expositions permanentes et temporaires</div>
+    <section class="hero">  <!--Changement de la balise "div" en "section" et suppression du css dans la balise-->
+
+      <img src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=1400" alt="Peinture de la renaissance">  <!--Ajout d'un alt pour l'image-->
+      <div class="hero-content">  <!--Suppresion du css dans la balise-->
+
+        <h1>Bienvenue au musée</h1> <!--Changement de la balise "div" en "h1" et suppression du css dans la balise-->
+        <h2>Art contemporain • Expositions permanentes et temporaires</h2> <!--Changement de la balise "div" en "h2" et suppression du css dans la balise-->
       </div>
-    </div>
+    </section>
 
     <!-- CARROUSEL -->
-    <!-- ERREUR A-01 : pas de role="region" ni aria-label -->
-    <div class="carousel" style="margin: 40px 0; background: #111;">
+    <section class="carousel">  <!--Changement de la balise "div" en "section" et suppression du css dans la balise-->
       <div class="carousel-track">
         <div class="carousel-slide">
-          <!-- ERREUR I-03 : image informative avec alt="" vide -->
-          <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=1200" alt="" style="width: 100%; height: 400px; object-fit: cover; opacity: 0.8;">
-          <div style="position: absolute; bottom: 20px; left: 20px; color: #fff;">
+
+          <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=1200" alt="Peinture d'un portrait par Djoo"> <!--Ajout d'un alt à l'image et suppression du css dans la balise-->
+          <div> <!--Suppresion du css dans la balise-->
             <b>Lumières du Nord</b> — Salle A
           </div>
         </div>
         <div class="carousel-slide">
-          <!-- ERREUR I-02 : alt non descriptif -->
-          <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=1200" alt="photo" style="width: 100%; height: 400px; object-fit: cover; opacity: 0.8;">
-          <div style="position: absolute; bottom: 20px; left: 20px; color: #fff;">
+          <img src="./img/abstract-forms.jpg" alt="Peinture de forme abstraite"> <!--Ajout d'un alt à l'image et suppression du css dans la balise-->
+          <div> <!--Supression du css dans la balise-->
             <b>Abstract Forms</b> — Salle B
           </div>
         </div>
         <div class="carousel-slide">
-          <img src="https://images.unsplash.com/photo-1565035010268-a3816f98589a?w=1200" alt="photo3" style="width: 100%; height: 400px; object-fit: cover; opacity: 0.8;">
-          <div style="position: absolute; bottom: 20px; left: 20px; color: #fff;">
+          <img src="./img/photographie-urbaine.jpg" alt="Photographie urbaine"> <!--Ajout d'un alt et suppression du css-->
+          <div"> <!--Supression du css dans la balise-->
             <b>Photographies Urbaines</b> — Salle C
           </div>
         </div>
       </div>
 
-      <!-- ERREUR A-02 : boutons sans aria-label -->
+
       <div class="carousel-controls" style="padding: 0 10px;">
         <button class="carousel-prev carousel-btn">&#8249;</button>
-        <div style="display: flex; gap: 8px; align-self: flex-end; padding: 10px;">
-          <!-- ERREUR A-04 : dots non masqués aux AT, pas de aria-hidden -->
-          <span style="width: 10px; height: 10px; border-radius: 50%; background: #fff; display: inline-block;"></span>
-          <span style="width: 10px; height: 10px; border-radius: 50%; background: #888; display: inline-block;"></span>
-          <span style="width: 10px; height: 10px; border-radius: 50%; background: #888; display: inline-block;"></span>
+        <div> <!--Supression du css-->
+          <span class="carousel-dots carousel-active"></span> <!--Supression du style dans les 3 balises "span" et ajout de class-->
+          <span class="carousel-dots"></span>
+          <span class="carousel-dots"></span>
         </div>
         <button class="carousel-next carousel-btn">&#8250;</button>
       </div>
-      <!-- ERREUR A-03 : aria-live absent -->
-    </div>
+    </section>
 
     <!-- EXPOSITIONS EN COURS -->
-    <div style="padding: 0 40px 40px;">
-      <!-- ERREUR : pas de H2, utilisation de div stylé -->
-      <div style="font-size: 28px; font-weight: bold; color: #1a1a1a; margin-bottom: 30px;">Expositions en cours</div>
+    <section class="expo"> <!--Changement de la balise "div" en "section", ajout d'une classe et supression du css dans la balise-->
 
-      <!-- ERREUR S-06 : cards en divs imbriqués au lieu de ul/li -->
-      <div class="cards-grid">
-        <div class="card">
-          <!-- ERREUR I-01 : alt absent -->
-          <img src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=600">
-          <div style="padding: 15px;">
-            <div style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 8px;">Lumières du Nord</div>
-            <div style="color: #aaa; font-size: 13px; margin-bottom: 12px;">Jusqu'au 30 juin 2026</div>
-            <!-- ERREUR S-07 : div cliquable au lieu de <a> ou <button> -->
-            <div class="btn" onclick="window.location='expositions.html'" style="font-size: 13px; cursor: pointer;">Voir l'exposition</div>
+      <h2>Expositions en cours</h2> <!--Changement de la balise "div" en "h2" et suppression du css dans la balise-->
+
+      <ul class="cards-grid"> <!--Changement de la balise "div" en "ul"-->
+        <li class="card"> <!--Changement de la balise "div" en "li"-->
+          <img src="./img/Lumiere-du-nord.jpg" alt="Peinture nommé Lumière du nord" class="card-img"> <!--Ajout d'un alt-->
+          <div class="card-desc"> <!--Suppression du css dans la balise-->
+            <h3>Lumières du Nord</h3>
+            <h4>Jusqu'au 30 juin 2026</h4> <!--Supression du css dans la balise et changement de la balise "div" en "h4"-->
+            <a class="btn" href="expositions.html">Voir l'exposition</a> <!--Changement de la balise en "a", "onclick" remplacé par "href" et supression du style dans la balise-->
           </div>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=600" alt="image">
-          <div style="padding: 15px;">
-            <div style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 8px;">Abstract Forms</div>
-            <div style="color: #aaa; font-size: 13px; margin-bottom: 12px;">Jusqu'au 15 août 2026</div>
-            <div class="btn" onclick="window.location='expositions.html'" style="font-size: 13px; cursor: pointer;">Voir l'exposition</div>
+        </li>
+        <li class="card">
+          <img src="./img/abstract-forms.jpg" alt="Peinture de forme abstraite">
+          <div class="card-desc">
+            <h3>Abstract Forms</h3>
+            <h4>Jusqu'au 15 août 2026</h4>
+            <a class="btn" href="expositions.html">Voir l'exposition</a>
           </div>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1565035010268-a3816f98589a?w=600" alt="image">
-          <div style="padding: 15px;">
-            <div style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 8px;">Photographies Urbaines</div>
-            <div style="color: #aaa; font-size: 13px; margin-bottom: 12px;">Permanent</div>
-            <div class="btn" onclick="window.location='expositions.html'" style="font-size: 13px; cursor: pointer;">Voir l'exposition</div>
+        </li>
+        <li class="card">
+          <img src="./img/photographie-urbaine.jpg" alt="Photographie Urbaine">
+          <div class="card-desc">
+            <h3>Photographies Urbaines</h3>
+            <h4>Permanent</h4>
+            <a class="btn" href="expositions.html">Voir l'exposition</a>
           </div>
-        </div>
-      </div>
-    </div>
+        </li>
+      </ul>
+    </section>
 
     <!-- CITATION -->
-    <!-- ERREUR S-08 : div au lieu de blockquote -->
-    <div class="quote" style="background: #f5f0e8; padding: 40px; text-align: center; margin: 0 40px 40px;">
-      <div style="font-size: 20px; color: #888; font-style: italic; margin-bottom: 10px;">
+    <blockquote class="quote"> <!--Remplacement de la balise "div" en "blockquote" et suppression du style dans la balise-->
+      <p> <!--Remplacement de la balise "div" en "p" et suppression du style dans la balise-->
         "L'art est le mensonge qui nous permet de réaliser la vérité."
-      </div>
-      <!-- ERREUR S-09 : <b> au lieu de <strong> -->
-      <div style="color: #aaa; font-size: 13px;">— <b>Pablo Picasso</b></div>
-    </div>
+      </p>
+      <div>— <strong>Pablo Picasso</strong></div> <!--Suppression du style dans la balise et remplacement de la balise "b" en "strong"-->
+    </blockquote>
 
     <!-- ACTUALITÉS -->
-    <div style="padding: 0 40px 60px;">
-      <div style="font-size: 28px; font-weight: bold; color: #1a1a1a; margin-bottom: 30px;">Actualités</div>
-      <!-- ERREUR S-10 : <br><br> pour espacer au lieu de paragraphes -->
-      <div style="color: #666; font-size: 15px; line-height: 1.8;">
-        <b>Nouveau : Atelier jeunesse</b> — Inscriptions ouvertes pour avril 2026.<br><br>
-        <b>Visite nocturne</b> — Samedi 18 avril, de 20h à minuit.<br><br>
-        <!-- ERREUR C-04 : couleur insuffisante en inline -->
-        <span style="color: #bbb;">Fermeture exceptionnelle le lundi 6 avril (Pâques).</span>
+    <section class="actualite"> <!--Remplacement de la balise "div" en "section" et suppression du style dans la balise, ajout d'une classe "actualite"-->
+      <h2>Actualités</h2> <!--Remplacement de la balise "div" en "h2" et suppression du style dans la balise-->
+      <div> <!--Suppression du css dans la balise-->
+        <h3>Nouveau : Atelier jeunesse</h3> — Inscriptions ouvertes pour avril 2026.<br><br> <!--Changement des balises "b" en "h3"-->
+        <h3>Visite nocturne</h3> — Samedi 18 avril, de 20h à minuit.<br><br>
+        <span>Fermeture exceptionnelle le lundi 6 avril (Pâques).</span> <!--Suppression du css dans la balise-->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ERREUR S-03 : div au lieu de <footer> -->
+    <div class="contact-section">
+      <h2 class="contact-title">Nous contacter</h2>
+      <div class="contact-info">
+        12 rue des Beaux-Arts, 75006 Paris<br>
+        <a href="tel:+33142000000" aria-label="Téléphone : 01 42 00 00 00" class="highlight-link">01 42 00 00 00</a><br>
+        <a href="mailto:contact@atelierdesarts.fr" class="highlight-link">contact@atelierdesarts.fr</a>
       </div>
     </div>
 
-  </div>
-  <!-- fin #contenu -->
+  </main>
 
-  <!-- ERREUR S-03 : div au lieu de <footer> -->
-  <div class="footer">
-    <!-- ERREUR S-11 : id="nav" dupliqué (aussi dans les autres pages) -->
-    <div id="nav" style="margin-bottom: 10px;">
-      <a href="index.html" style="color: #777; margin: 0 10px;">Accueil</a>
-      <a href="expositions.html" style="color: #777; margin: 0 10px;">Expositions</a>
-      <a href="billetterie.html" style="color: #777; margin: 0 10px;">Billetterie</a>
-      <a href="apropos.html" style="color: #777; margin: 0 10px;">À propos</a>
-    </div>
-    <div>© 2026 L'Atelier des Arts — 12 rue des Beaux-Arts, 75006 Paris — 01 42 00 00 00</div>
-  </div>
+  <footer class="footer">
+    <ul id="footer-nav">
+      <li><a href="index.html" class="footer-link">Accueil</a></li>
+      <li><a href="expositions.html" class="footer-link">Expositions</a></li>
+      <li><a href="apropos.html" class="footer-link">À propos</a></li>
+    </ul>
+    <div class="copyright">© 2026 L'Atelier des Arts</div>
+  </footer>
 
   <script src="script.js"></script>
 </body>

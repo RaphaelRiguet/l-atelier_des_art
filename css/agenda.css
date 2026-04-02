@@ -1,0 +1,82 @@
+.main{
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.h1{
+    font-size: 36px;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.p{
+    color: #4b4b4b;
+    margin-bottom: 40px;
+}
+
+.titre2{
+    font-size: 24px;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+.card_list{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.card{
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #eee;
+    align-items: flex-start;
+}
+
+.card_background{
+    background: #1a1a1a;
+    color: #fff;
+    padding: 10px 15px;
+    text-align: center;
+    min-width: 60px;
+}
+
+.card_date{
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.card_mois{
+    font-size: 12px;
+}
+
+.h3{
+    font-size: 18px;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+}
+
+.info{
+    color: #000000;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.programme{
+    color: #000000;
+    line-height: 1.6;
+}
+
+.titre_question{
+    font-size: 24px;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}

@@ -43,24 +43,83 @@ function initTabs() {
 }
 
 // === MODALE ===
+let lastFocusedElement = null;
+
 function openModal() {
-  document.querySelector('.modal-overlay').classList.add('open');
-  // ERREUR : focus non déplacé vers la modale
-  // ERREUR : fond non masqué aux AT (aria-hidden absent)
+  const overlay = document.getElementById('modal-confirmation');
+  const mainContent = document.querySelector('main');
+  if (!overlay) return;
+
+  lastFocusedElement = document.activeElement;
+  overlay.classList.add('open');
+  overlay.removeAttribute('hidden');
+  overlay.setAttribute('aria-hidden', 'false');
+  if (mainContent) mainContent.setAttribute('aria-hidden', 'true');
+
+  const focusable = overlay.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+  if (focusable) focusable.focus();
+  document.addEventListener('keydown', handleModalKeydown);
 }
 
 function closeModal() {
-  document.querySelector('.modal-overlay').classList.remove('open');
-  // ERREUR : focus non retourné à l'élément déclencheur
+  const overlay = document.getElementById('modal-confirmation');
+  const mainContent = document.querySelector('main');
+  if (!overlay) return;
+
+  overlay.classList.remove('open');
+  overlay.setAttribute('hidden', '');
+  overlay.setAttribute('aria-hidden', 'true');
+  if (mainContent) mainContent.removeAttribute('aria-hidden');
+  if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+    lastFocusedElement.focus();
+  }
+  document.removeEventListener('keydown', handleModalKeydown);
+}
+
+function handleModalKeydown(event) {
+  const overlay = document.getElementById('modal-confirmation');
+  if (!overlay || overlay.hasAttribute('hidden')) return;
+
+  if (event.key === 'Escape') {
+    closeModal();
+  }
+
+  if (event.key === 'Tab') {
+    const focusableEls = overlay.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    if (!focusableEls.length) return;
+
+    const firstFocusableEl = focusableEls[0];
+    const lastFocusableEl = focusableEls[focusableEls.length - 1];
+
+    if (event.shiftKey && document.activeElement === firstFocusableEl) {
+      event.preventDefault();
+      lastFocusableEl.focus();
+    } else if (!event.shiftKey && document.activeElement === lastFocusableEl) {
+      event.preventDefault();
+      firstFocusableEl.focus();
+    }
+  }
 }
 
 function initModal() {
   const openBtn = document.querySelector('.open-modal');
-  const closeBtn = document.querySelector('.close-modal');
-  if (!openBtn) return;
+  const closeBtns = document.querySelectorAll('.close-modal');
+  const form = document.getElementById('form-billetterie');
+  if (!openBtn || !form) return;
 
-  openBtn.addEventListener('click', openModal);
-  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  openBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+    openModal();
+  });
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    openModal();
+  });
+
+  closeBtns.forEach(function (button) {
+    button.addEventListener('click', closeModal);
+  });
   // ERREUR : fermeture par Escape absente
 }
 

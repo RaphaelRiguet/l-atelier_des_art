@@ -1,0 +1,167 @@
+.nav{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.title-header{
+    font-size: 22px;
+    color: #c8a96e;
+    font-weight: bold;
+}
+
+.page-clicked-header{
+    color: #fff;
+}
+
+.pop-up{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#modal-title{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.close-modal{
+    cursor: pointer;
+    font-size: 24px;
+    color: #999;
+}
+
+.modal-subtitle{
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.btn .close-modal{
+    cursor: pointer;
+}
+
+#contenu{
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.title{
+    font-size: 36px;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.subtitle{
+    color: #999;
+    margin-bottom: 40px;
+}
+
+.container-informations{
+    background: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-left: 3px solid #c8a96e;
+}
+
+.title-informations{
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.table-informations{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.td-1{
+    padding: 8px 0;
+    color: #666;
+}
+
+.td-2{
+    padding: 8px 0;
+    color: #333;
+    font-weight: bold;
+    text-align: right;
+}
+
+#form-billetterie{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.title-2{
+    font-size: 22px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+.title-3{
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 6px;
+}
+
+.span-star{
+    color: red;
+}
+
+.input-title{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+}
+
+.span-subtitle{
+    color: #aaa;
+    font-size: 12px;
+}
+
+.title-4{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+}
+
+#form-error{
+    display: none;
+    color: #e74c3c;
+    font-size: 14px;
+    background: #ffeaea;
+    padding: 10px;
+}
+
+.open-modal{
+    background: #c8a96e;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.footer{
+    margin-top: 60px;
+}
+
+.nav-footer{
+    margin-bottom: 10px;
+}
+
+.links-footer{
+    color: #777;
+    margin: 0 10px;
+}
+
+input::placeholder{
+    color: #1a1a1a;
+}
