@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <title>Billetterie — L'Atelier des Arts</title>
-    <html lang="fr"></html>
   <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
 
   <header class="nav">
-
-
+   
+    
     <h1>L'Atelier des Arts</h1>
     <nav>
       <a href="index.html">Accueil</a>
@@ -19,43 +18,32 @@
       <a href="agenda.html">Agenda</a>
       <a href="apropos.html" class="active">À propos</a>
     </nav>
-
+    
   </header>
 
   <main id="contenu">
 
-    <!-- MODALE DÉFECTUEUSE -->
-    <!-- ERREUR A-09 : <div> sans role="dialog" ni aria-modal="true" -->
-    <!-- ERREUR A-10 : pas de aria-labelledby pointant vers le titre -->
-    <div class="modal-overlay" id="modal-confirmation">
+    <div class="modal-overlay" id="modal-confirmation" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true" hidden>
       <div class="modal-box">
         <div class="pop-up">
-          <!-- id présent mais non référencé par aria-labelledby sur la modale -->
-          <div id="modal-title">Confirmation de commande</div>
-          <!-- ERREUR : bouton fermeture en <div> sans role="button" ni aria-label -->
-          <!-- ERREUR A-11/A-12 : pas de focus trap ni fermeture par Escape dans le JS -->
-          <div class="close-modal">✕</div>
+          <h2 id="modal-title">Confirmation de commande</h2>
+          <button type="button" class="close-modal" aria-label="Fermer la fenêtre de confirmation">✕</button>
         </div>
         <div class="modal-subtitle">
           Votre réservation a bien été enregistrée. Un email de confirmation vous sera envoyé sous 24h.
         </div>
-        <div class="btn close-modal">Fermer</div>
+        <button type="button" class="btn close-modal">Fermer</button>
       </div>
     </div>
-    <!-- ERREUR A-13 : aria-hidden non ajouté sur le contenu principal quand modale ouverte -->
 
-    <!-- ERREUR S-04 : <div> au lieu de <main> -->
-    <div id="contenu">
+    <section class="billetterie-content">
 
-      <!-- ERREUR : pas de H1 -->
-      <div class="title">Billetterie</div>
-      <div class="subtitle">Réservez vos billets en ligne. Les billets sont nominatifs et non échangeables.</div>
+      <h1>Billetterie</h1>
+      <p class="subtitle">Réservez vos billets en ligne. Les billets sont nominatifs et non échangeables.</p>
 
-      <!-- TARIFS — TABLEAU DE MISE EN PAGE -->
-      <!-- ERREUR S-12 : tableau de mise en page sans role="presentation" -->
       <div class="container-informations">
         <div class="title-informations">Tarifs</div>
-        <table class="table-informations">
+        <table class="table-informations" role="presentation">
           <tr>
             <td class="td-1">Adulte</td>
             <td class="td-2">12 €</td>
@@ -72,44 +60,38 @@
       </div>
 
       <!-- FORMULAIRE DÉFECTUEUX -->
-      <form id="form-billetterie" onsubmit="event.preventDefault(); openModal();">
+      <form id="form-billetterie">
 
         <div class="title-2">Vos informations</div>
 
-        <!-- ERREUR : label non associé (div au lieu de label, pas de for/id) -->
         <div>
-          <div class="title-3">Prénom <span class="span-star">*</span></div>
-          <!-- ERREUR A-18 : aria-required absent ET required HTML absent -->
-          <input type="text" placeholder="Votre prénom" class="input-title">
+          <label for="prenom" class="title-3">Prénom <span class="span-star">*</span></label>
+          <input id="prenom" name="prenom" type="text" placeholder="Votre prénom" class="input-title" required>
         </div>
 
         <div>
-          <div class="title-3">Nom <span class="span-star">*</span></div>
-          <input type="text" placeholder="Votre nom" class="input-title">
+          <label for="nom" class="title-3">Nom <span class="span-star">*</span></label>
+          <input id="nom" name="nom" type="text" placeholder="Votre nom" class="input-title" required>
         </div>
 
         <div>
-          <div class="title-3">Adresse e-mail <span class="span-star">*</span></div>
-          <!-- ERREUR : type="text" au lieu de type="email" -->
-          <input type="text" placeholder="votre@email.com" class="input-title">
+          <label for="email" class="title-3">Adresse e-mail <span class="span-star">*</span></label>
+          <input id="email" name="email" type="email" placeholder="votre@email.com" class="input-title" required>
         </div>
 
         <div>
-          <div class="title-3">
+          <label for="date-visite" class="title-3">
             Date de visite <span class="span-star">*</span>
-            <span class="span-subtitle">(format JJ/MM/AAAA)</span>
-          </div>
-          <!-- ERREUR A-20 : aria-describedby pointe vers #hint-date qui n'existe pas dans le DOM -->
-          <input type="text" placeholder="Ex : 20/04/2026" aria-describedby="hint-date" class="input-title">
+          </label>
+          <span id="hint-date" class="span-subtitle">(format JJ/MM/AAAA)</span>
+          <input id="date-visite" name="date-visite" type="text" placeholder="Ex : 20/04/2026" aria-describedby="hint-date" class="input-title" required>
         </div>
 
-        <!-- ERREUR A-17 : groupe de boutons radio sans <fieldset> ni <legend> -->
-        <div>
-          <div class="title-3">Type de billet <span class="span-star">*</span></div>
-          <div class="title-4" style="display: flex; flex-direction: column; gap: 8px;">
-            <!-- ERREUR A-18 : aria-required="true" présent MAIS required HTML absent (incohérence) -->
+        <fieldset>
+          <legend class="title-3">Type de billet <span class="span-star">*</span></legend>
+          <div class="title-4">
             <label>
-              <input type="radio" name="tarif" value="adulte" aria-required="true"> Adulte — 12 €
+              <input type="radio" name="tarif" value="adulte" required> Adulte — 12 €
             </label>
             <label class="title-4">
               <input type="radio" name="tarif" value="reduit"> Réduit — 8 €
@@ -118,22 +100,19 @@
               <input type="radio" name="tarif" value="enfant"> Enfant (- 12 ans) — Gratuit
             </label>
           </div>
-        </div>
+        </fieldset>
 
-        <!-- ERREUR A-19 : message d'erreur dynamique sans role="alert" ni aria-live -->
-        <div id="form-error">
+        <div id="form-error" role="alert" aria-live="assertive">
           Veuillez remplir tous les champs obligatoires.
         </div>
 
-        <!-- bouton de soumission : correct ici (pour que le formulaire fonctionne) -->
-        <!-- ERREUR : pas de class="open-modal" donc le JS d'ouverture de modale ne s'active pas via initModal -->
         <button type="submit" class="open-modal">
           Confirmer la réservation
         </button>
 
       </form>
 
-    </div>
+    </section>
 
   </main>
 

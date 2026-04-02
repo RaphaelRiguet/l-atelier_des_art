@@ -161,3 +161,7 @@
     color: #777;
     margin: 0 10px;
 }
+
+input::placeholder{
+    color: #1a1a1a;
+}
