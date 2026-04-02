@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html>
+<!-- CORRECTION : AJOUT DE LANGUAGE -->
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <title>Agenda — L'Atelier des Arts</title>
+<<<<<<< HEAD
   <!-- ERREUR : lang absent sur <html> -->
   <link rel="stylesheet" href="css/main.css">
+=======
+  <link rel="stylesheet" href="./css/main.css">
+>>>>>>> 248351f84b30d5661ff2bbb2ecf6397058d4d315
 </head>
 <body>
 
@@ -22,58 +27,61 @@
     <!-- ERREUR : pas de lien d'évitement -->
   </div>
 
-  <!-- ERREUR S-04 : <div> au lieu de <main> -->
-  <div id="contenu" style="padding: 40px; max-width: 900px; margin: 0 auto;">
+    <!-- CORRECTION : CHANGEMENT DE DIV EN MAIN -->
+  <main class="main">
 
-    <!-- ERREUR : pas de H1 -->
-    <div style="font-size: 36px; font-weight: bold; color: #1a1a1a; margin-bottom: 10px;">Agenda</div>
-    <div style="color: #999; margin-bottom: 40px;">Événements, ateliers et visites guidées à venir.</div>
+    <!-- CORRECTION : CHANGEMENT DE DIV EN H1 -->
+    <h1 class="h1">Agenda</h1>
+    <p class="p">Événements, ateliers et visites guidées à venir.</p>
 
-    <!-- ÉVÉNEMENTS — ERREUR S-06 : liste en divs imbriqués au lieu de ul/li -->
-    <div style="font-size: 24px; font-weight: bold; color: #1a1a1a; margin-bottom: 20px;">Prochains événements</div>
+    <!-- CORRECTION : CHANGEMENT DE DIV EN H2 -->
+    <h2 class="titre2">Prochains événements</h2>
 
-    <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 50px;">
+    <div class="card_list">
 
-      <div style="display: flex; gap: 20px; padding: 20px; border: 1px solid #eee; align-items: flex-start;">
-        <div style="background: #c8a96e; color: #fff; padding: 10px 15px; text-align: center; min-width: 60px;">
-          <div style="font-size: 22px; font-weight: bold; line-height: 1;">18</div>
-          <div style="font-size: 12px;">AVR</div>
+      <div class="card">
+        <div class="card_background">
+          <p class="card_date">18</p>
+          <!-- CORRECTION : CHANGEMENT DE "AVR" EN "AVRIL" -->
+          <p class="card_mois">AVRIL</p>
         </div>
         <div>
-          <div style="font-size: 18px; font-weight: bold; color: #1a1a1a; margin-bottom: 5px;">Nuit des musées</div>
-          <div style="color: #888; font-size: 14px; margin-bottom: 8px;">20h00 – 00h00 · Entrée libre</div>
-          <div style="color: #666; line-height: 1.6;">Visite libre et nocturne de toutes les salles. Concert de jazz à 21h30.</div>
+          <!-- CORRECTION : CHANGEMENT DE DIV EN H3 -->
+          <h3 class="h3">Nuit des musées</h3>
+          <p class="info">20h00 – 00h00 · Entrée libre</p>
+          <p class="programme">Visite libre et nocturne de toutes les salles. Concert de jazz à 21h30.</p>
         </div>
       </div>
 
-      <div style="display: flex; gap: 20px; padding: 20px; border: 1px solid #eee; align-items: flex-start;">
-        <div style="background: #1a1a1a; color: #fff; padding: 10px 15px; text-align: center; min-width: 60px;">
-          <div style="font-size: 22px; font-weight: bold; line-height: 1;">25</div>
-          <div style="font-size: 12px;">AVR</div>
+      <div class="card">
+        <div class="card_background">
+          <p class="card_date">25</p>
+          <!-- CORRECTION : CHANGEMENT DE "AVR" EN "AVRIL" -->
+          <p class="card_mois">AVRIL</p>
         </div>
         <div>
-          <div style="font-size: 18px; font-weight: bold; color: #1a1a1a; margin-bottom: 5px;">Atelier aquarelle – Adultes</div>
-          <div style="color: #888; font-size: 14px; margin-bottom: 8px;">14h00 – 17h00 · Sur inscription · 25 €</div>
-          <div style="color: #666; line-height: 1.6;">Initiation à l'aquarelle en s'inspirant des œuvres de l'exposition "Lumières du Nord".</div>
+          <h3 class="h3">Atelier aquarelle – Adultes</h3>
+          <p class="info">14h00 – 17h00 · Sur inscription · 25 €</p>
+          <p class="programme">Initiation à l'aquarelle en s'inspirant des œuvres de l'exposition "Lumières du Nord".</p>
         </div>
       </div>
 
-      <div style="display: flex; gap: 20px; padding: 20px; border: 1px solid #eee; align-items: flex-start;">
-        <div style="background: #1a1a1a; color: #fff; padding: 10px 15px; text-align: center; min-width: 60px;">
-          <div style="font-size: 22px; font-weight: bold; line-height: 1;">10</div>
-          <div style="font-size: 12px;">MAI</div>
+      <div class="card">
+        <div class="card_background">
+          <p class="card_date">10</p>
+          <p class="card_mois">MAI</p>
         </div>
         <div>
-          <div style="font-size: 18px; font-weight: bold; color: #1a1a1a; margin-bottom: 5px;">Visite guidée en LSF</div>
-          <div style="color: #888; font-size: 14px; margin-bottom: 8px;">10h00 – 12h00 · Tarif réduit · Sur inscription</div>
-          <div style="color: #666; line-height: 1.6;">Visite commentée en Langue des Signes Française par un médiateur certifié.</div>
+          <h3 class="h3">Visite guidée en LSF</h3>
+          <p class="info">10h00 – 12h00 · Tarif réduit · Sur inscription</p>
+          <p class="programme">Visite commentée en Langue des Signes Française par un médiateur certifié.</p>
         </div>
       </div>
 
-    </div>
+    </main>
 
     <!-- FAQ ACCORDÉON DÉFECTUEUX -->
-    <div style="font-size: 24px; font-weight: bold; color: #1a1a1a; margin-bottom: 20px;">Questions fréquentes</div>
+    <h2 class="titre_question">Questions fréquentes</h2>
 
     <div style="display: flex; flex-direction: column;">
 
