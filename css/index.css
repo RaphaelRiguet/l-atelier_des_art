@@ -111,6 +111,7 @@
     gap: 8px;
     align-self: flex-end;
     padding: 10px;
+    margin-top: 23%;
 }
 
 .carousel-btn {
@@ -177,7 +178,7 @@
 }
 
 .card-desc h4{
-    color: #aaa;
+    color: #1a1a1a;
     font-size: 13px;
     margin-bottom: 12px;
 }
@@ -186,4 +187,46 @@
     font-size: 13px;
     cursor: pointer;
     text-decoration: none;
+}
+
+/* CITATION */
+
+.quote{
+    background: #f5f0e8;
+    padding: 40px;
+    text-align: center;
+    margin: 0 40px 40px;
+}
+
+.quote p{
+    font-size: 20px;
+    color: #2a2a2a;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.quote div{
+    color: #2a2a2a;
+    font-size: 13px;
+}
+
+.actualite{
+    padding: 0 40px 60px;
+}
+
+.actualite h2{
+    font-size: 28px;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+}
+
+.actualite div{
+    color: #666;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.actualite span{
+    color: #1a1a1a;
 }
