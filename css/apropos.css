@@ -161,22 +161,3 @@
 }
 
 
-#footer-nav {
-    margin-bottom: 10px;
-    list-style: none;
-    padding: 0;
-}
-
-#footer-nav li {
-    display: inline;
-}
-
-.footer-link {
-    color: #cdcdcd;
-    margin: 0 10px;
-}
-
-.copyright{
-    color: #cdcdcd;
-    font-size: 14px;
-}
