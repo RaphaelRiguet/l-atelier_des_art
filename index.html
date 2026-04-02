@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <title>L'Atelier des Arts</title>
-  <!-- ERREUR : lang absent sur <html> -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
+  <main>
 
-  <!-- ERREUR S-02 : <div> au lieu de <header> -->
-  <div class="nav" style="position: sticky; top: 0; z-index: 50;">
+  <header class="nav">
     <!-- ERREUR S-01 : <div> au lieu de <nav> -->
     <div style="font-size: 22px; color: #c8a96e; font-weight: bold;">L'Atelier des Arts</div>
     <div>
@@ -20,7 +19,7 @@
       <a href="apropos.html">À propos</a>
     </div>
     <!-- ERREUR : pas de lien d'évitement -->
-  </div>
+  </header>
 
   <!-- ERREUR S-04 : <div> au lieu de <main> -->
   <div id="contenu">
@@ -150,5 +149,6 @@
   </div>
 
   <script src="script.js"></script>
+  </main>
 </body>
 </html>
