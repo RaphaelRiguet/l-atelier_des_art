@@ -71,22 +71,21 @@
     </section>
 
     <!-- EXPOSITIONS EN COURS -->
-    <div style="padding: 0 40px 40px;">
-      <!-- ERREUR : pas de H2, utilisation de div stylé -->
-      <div style="font-size: 28px; font-weight: bold; color: #1a1a1a; margin-bottom: 30px;">Expositions en cours</div>
+    <section class="expo"> <!--Changement de la balise "div" en "section", ajout d'une classe et supression du css dans la balise-->
+
+      <h2>Expositions en cours</h2> <!--Changement de la balise "div" en "h2" et suppression du css dans la balise-->
 
       <!-- ERREUR S-06 : cards en divs imbriqués au lieu de ul/li -->
       <div class="cards-grid">
-        <div class="card">
-          <!-- ERREUR I-01 : alt absent -->
-          <img src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=600">
+        <ul class="card"> <!--Changement de la balise "ul" en "li"-->
+          <img src="./img/Lumiere-du-nord.jpg" alt="Peinture nommé Lumière du nord"> <!--Ajout d'un alt-->
           <div style="padding: 15px;">
             <div style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 8px;">Lumières du Nord</div>
             <div style="color: #aaa; font-size: 13px; margin-bottom: 12px;">Jusqu'au 30 juin 2026</div>
             <!-- ERREUR S-07 : div cliquable au lieu de <a> ou <button> -->
             <div class="btn" onclick="window.location='expositions.html'" style="font-size: 13px; cursor: pointer;">Voir l'exposition</div>
           </div>
-        </div>
+        </ul>
         <div class="card">
           <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=600" alt="image">
           <div style="padding: 15px;">
@@ -104,7 +103,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- CITATION -->
     <!-- ERREUR S-08 : div au lieu de blockquote -->

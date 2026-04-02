@@ -133,3 +133,14 @@
 .carousel-active{
     background: #fff;
 }
+
+.expo{
+    padding: 0 40px 40px;
+}
+
+.expo h2{
+    font-size: 28px;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+}
