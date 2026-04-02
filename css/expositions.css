@@ -117,7 +117,7 @@ body {
 }
 
 
-.btn {
+.expo-btn {
   display: inline-block;
   padding: 10px 20px;
   background: #ce9937;
@@ -128,7 +128,7 @@ body {
   cursor: pointer;
 }
 
-.btn:hover {
+.expo-btn:hover {
   background: #b8965c;
 }
 
@@ -169,16 +169,12 @@ body {
   margin-bottom: 10px;
 }
 
-.contact-info {
-  color: #555;
-}
-
 .highlight-link {
-  color: #000000;
+  color: #c8a96e;
   text-decoration: none;
 }
 
-#footer-nav {
+/* #footer-nav {
   margin-bottom: 10px;
   list-style: none;
   padding: 0;
@@ -191,7 +187,7 @@ body {
 .footer-link {
   color: #cdcdcd;
   margin: 0 10px;
-}
+} */
 
 .copyright {
   color: #cdcdcd;
@@ -205,7 +201,7 @@ body {
 
 
 
-#footer-nav {
+/* #footer-nav {
     margin-bottom: 10px;
     list-style: none;
     padding: 0;
@@ -218,7 +214,7 @@ body {
 .footer-link {
     color: #cdcdcd;
     margin: 0 10px;
-}
+} */
 
 .copyright{
     color: #cdcdcd;
