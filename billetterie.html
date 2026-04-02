@@ -3,147 +3,149 @@
 <head>
   <meta charset="UTF-8">
   <title>Billetterie — L'Atelier des Arts</title>
-  <!-- ERREUR : lang absent sur <html> -->
+    <html lang="fr"></html>
   <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
 
-  <!-- ERREUR S-02 : <div> au lieu de <header> -->
-  <div class="nav" style="position: sticky; top: 0; z-index: 50;">
-    <!-- ERREUR S-01 : pas de <nav> -->
-    <div style="font-size: 22px; color: #c8a96e; font-weight: bold;">L'Atelier des Arts</div>
-    <div>
+  <header class="nav">
+
+
+    <h1>L'Atelier des Arts</h1>
+    <nav>
       <a href="index.html">Accueil</a>
       <a href="expositions.html">Expositions</a>
-      <a href="billetterie.html" style="color: #fff;">Billetterie</a>
+      <a href="billetterie.html">Billetterie</a>
       <a href="agenda.html">Agenda</a>
-      <a href="apropos.html">À propos</a>
-    </div>
-    <!-- ERREUR : pas de lien d'évitement -->
-  </div>
+      <a href="apropos.html" class="active">À propos</a>
+    </nav>
 
-  <!-- MODALE DÉFECTUEUSE -->
-  <!-- ERREUR A-09 : <div> sans role="dialog" ni aria-modal="true" -->
-  <!-- ERREUR A-10 : pas de aria-labelledby pointant vers le titre -->
-  <div class="modal-overlay" id="modal-confirmation">
-    <div class="modal-box">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-        <!-- id présent mais non référencé par aria-labelledby sur la modale -->
-        <div id="modal-title" style="font-size: 20px; font-weight: bold;">Confirmation de commande</div>
-        <!-- ERREUR : bouton fermeture en <div> sans role="button" ni aria-label -->
-        <!-- ERREUR A-11/A-12 : pas de focus trap ni fermeture par Escape dans le JS -->
-        <div class="close-modal" style="cursor: pointer; font-size: 24px; color: #999;">✕</div>
-      </div>
-      <div style="color: #666; margin-bottom: 20px;">
-        Votre réservation a bien été enregistrée. Un email de confirmation vous sera envoyé sous 24h.
-      </div>
-      <div class="btn close-modal" style="cursor: pointer;">Fermer</div>
-    </div>
-  </div>
-  <!-- ERREUR A-13 : aria-hidden non ajouté sur le contenu principal quand modale ouverte -->
+  </header>
 
-  <!-- ERREUR S-04 : <div> au lieu de <main> -->
-  <div id="contenu" style="max-width: 700px; margin: 0 auto; padding: 40px;">
+  <main id="contenu">
 
-    <!-- ERREUR : pas de H1 -->
-    <div style="font-size: 36px; font-weight: bold; color: #1a1a1a; margin-bottom: 10px;">Billetterie</div>
-    <div style="color: #999; margin-bottom: 40px;">Réservez vos billets en ligne. Les billets sont nominatifs et non échangeables.</div>
-
-    <!-- TARIFS — TABLEAU DE MISE EN PAGE -->
-    <!-- ERREUR S-12 : tableau de mise en page sans role="presentation" -->
-    <div style="background: #f9f9f9; padding: 20px; margin-bottom: 30px; border-left: 3px solid #c8a96e;">
-      <div style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 15px;">Tarifs</div>
-      <table style="width: 100%; border-collapse: collapse;">
-        <tr>
-          <td style="padding: 8px 0; color: #666;">Adulte</td>
-          <td style="padding: 8px 0; color: #333; font-weight: bold; text-align: right;">12 €</td>
-        </tr>
-        <tr>
-          <td style="padding: 8px 0; color: #666;">Réduit (étudiant, senior)</td>
-          <td style="padding: 8px 0; color: #333; font-weight: bold; text-align: right;">8 €</td>
-        </tr>
-        <tr>
-          <td style="padding: 8px 0; color: #666;">Enfant (- 12 ans)</td>
-          <td style="padding: 8px 0; color: #333; font-weight: bold; text-align: right;">Gratuit</td>
-        </tr>
-      </table>
-    </div>
-
-    <!-- FORMULAIRE DÉFECTUEUX -->
-    <form id="form-billetterie" style="display: flex; flex-direction: column; gap: 20px;" onsubmit="event.preventDefault(); openModal();">
-
-      <div style="font-size: 22px; font-weight: bold; color: #1a1a1a;">Vos informations</div>
-
-      <!-- ERREUR : label non associé (div au lieu de label, pas de for/id) -->
-      <div>
-        <div style="font-size: 14px; color: #555; margin-bottom: 6px;">Prénom <span style="color: red;">*</span></div>
-        <!-- ERREUR A-18 : aria-required absent ET required HTML absent -->
-        <input type="text" placeholder="Votre prénom" style="width: 100%; padding: 10px; border: 1px solid #ddd; font-size: 15px;">
-      </div>
-
-      <div>
-        <div style="font-size: 14px; color: #555; margin-bottom: 6px;">Nom <span style="color: red;">*</span></div>
-        <input type="text" placeholder="Votre nom" style="width: 100%; padding: 10px; border: 1px solid #ddd; font-size: 15px;">
-      </div>
-
-      <div>
-        <div style="font-size: 14px; color: #555; margin-bottom: 6px;">Adresse e-mail <span style="color: red;">*</span></div>
-        <!-- ERREUR : type="text" au lieu de type="email" -->
-        <input type="text" placeholder="votre@email.com" style="width: 100%; padding: 10px; border: 1px solid #ddd; font-size: 15px;">
-      </div>
-
-      <div>
-        <div style="font-size: 14px; color: #555; margin-bottom: 6px;">
-          Date de visite <span style="color: red;">*</span>
-          <span style="color: #aaa; font-size: 12px;">(format JJ/MM/AAAA)</span>
+    <!-- MODALE DÉFECTUEUSE -->
+    <!-- ERREUR A-09 : <div> sans role="dialog" ni aria-modal="true" -->
+    <!-- ERREUR A-10 : pas de aria-labelledby pointant vers le titre -->
+    <div class="modal-overlay" id="modal-confirmation">
+      <div class="modal-box">
+        <div class="pop-up">
+          <!-- id présent mais non référencé par aria-labelledby sur la modale -->
+          <div id="modal-title">Confirmation de commande</div>
+          <!-- ERREUR : bouton fermeture en <div> sans role="button" ni aria-label -->
+          <!-- ERREUR A-11/A-12 : pas de focus trap ni fermeture par Escape dans le JS -->
+          <div class="close-modal">✕</div>
         </div>
-        <!-- ERREUR A-20 : aria-describedby pointe vers #hint-date qui n'existe pas dans le DOM -->
-        <input type="text" placeholder="Ex : 20/04/2026" aria-describedby="hint-date" style="width: 100%; padding: 10px; border: 1px solid #ddd; font-size: 15px;">
-      </div>
-
-      <!-- ERREUR A-17 : groupe de boutons radio sans <fieldset> ni <legend> -->
-      <div>
-        <div style="font-size: 14px; color: #555; margin-bottom: 10px;">Type de billet <span style="color: red;">*</span></div>
-        <div style="display: flex; flex-direction: column; gap: 8px;">
-          <!-- ERREUR A-18 : aria-required="true" présent MAIS required HTML absent (incohérence) -->
-          <label style="display: flex; align-items: center; gap: 8px; color: #666;">
-            <input type="radio" name="tarif" value="adulte" aria-required="true"> Adulte — 12 €
-          </label>
-          <label style="display: flex; align-items: center; gap: 8px; color: #666;">
-            <input type="radio" name="tarif" value="reduit"> Réduit — 8 €
-          </label>
-          <label style="display: flex; align-items: center; gap: 8px; color: #666;">
-            <input type="radio" name="tarif" value="enfant"> Enfant (- 12 ans) — Gratuit
-          </label>
+        <div class="modal-subtitle">
+          Votre réservation a bien été enregistrée. Un email de confirmation vous sera envoyé sous 24h.
         </div>
+        <div class="btn close-modal">Fermer</div>
       </div>
-
-      <!-- ERREUR A-19 : message d'erreur dynamique sans role="alert" ni aria-live -->
-      <div id="form-error" style="display: none; color: #e74c3c; font-size: 14px; background: #ffeaea; padding: 10px;">
-        Veuillez remplir tous les champs obligatoires.
-      </div>
-
-      <!-- bouton de soumission : correct ici (pour que le formulaire fonctionne) -->
-      <!-- ERREUR : pas de class="open-modal" donc le JS d'ouverture de modale ne s'active pas via initModal -->
-      <button type="submit" class="open-modal" style="background: #c8a96e; color: #fff; border: none; padding: 12px 30px; font-size: 16px; cursor: pointer; align-self: flex-start;">
-        Confirmer la réservation
-      </button>
-
-    </form>
-
-  </div>
-
-  <!-- ERREUR S-03 : div au lieu de <footer> -->
-  <div class="footer" style="margin-top: 60px;">
-    <!-- ERREUR S-11 : id="nav" dupliqué -->
-    <div id="nav" style="margin-bottom: 10px;">
-      <a href="index.html" style="color: #777; margin: 0 10px;">Accueil</a>
-      <a href="expositions.html" style="color: #777; margin: 0 10px;">Expositions</a>
-      <a href="billetterie.html" style="color: #777; margin: 0 10px;">Billetterie</a>
     </div>
-    <div>© 2026 L'Atelier des Arts</div>
-  </div>
+    <!-- ERREUR A-13 : aria-hidden non ajouté sur le contenu principal quand modale ouverte -->
 
-  <script src="script.js"></script>
+    <!-- ERREUR S-04 : <div> au lieu de <main> -->
+    <div id="contenu">
+
+      <!-- ERREUR : pas de H1 -->
+      <div class="title">Billetterie</div>
+      <div class="subtitle">Réservez vos billets en ligne. Les billets sont nominatifs et non échangeables.</div>
+
+      <!-- TARIFS — TABLEAU DE MISE EN PAGE -->
+      <!-- ERREUR S-12 : tableau de mise en page sans role="presentation" -->
+      <div class="container-informations">
+        <div class="title-informations">Tarifs</div>
+        <table class="table-informations">
+          <tr>
+            <td class="td-1">Adulte</td>
+            <td class="td-2">12 €</td>
+          </tr>
+          <tr>
+            <td class="td-1">Réduit (étudiant, senior)</td>
+            <td class="td-2">8 €</td>
+          </tr>
+          <tr>
+            <td class="td-1">Enfant (- 12 ans)</td>
+            <td class="td-2">Gratuit</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- FORMULAIRE DÉFECTUEUX -->
+      <form id="form-billetterie" onsubmit="event.preventDefault(); openModal();">
+
+        <div class="title-2">Vos informations</div>
+
+        <!-- ERREUR : label non associé (div au lieu de label, pas de for/id) -->
+        <div>
+          <div class="title-3">Prénom <span class="span-star">*</span></div>
+          <!-- ERREUR A-18 : aria-required absent ET required HTML absent -->
+          <input type="text" placeholder="Votre prénom" class="input-title">
+        </div>
+
+        <div>
+          <div class="title-3">Nom <span class="span-star">*</span></div>
+          <input type="text" placeholder="Votre nom" class="input-title">
+        </div>
+
+        <div>
+          <div class="title-3">Adresse e-mail <span class="span-star">*</span></div>
+          <!-- ERREUR : type="text" au lieu de type="email" -->
+          <input type="text" placeholder="votre@email.com" class="input-title">
+        </div>
+
+        <div>
+          <div class="title-3">
+            Date de visite <span class="span-star">*</span>
+            <span class="span-subtitle">(format JJ/MM/AAAA)</span>
+          </div>
+          <!-- ERREUR A-20 : aria-describedby pointe vers #hint-date qui n'existe pas dans le DOM -->
+          <input type="text" placeholder="Ex : 20/04/2026" aria-describedby="hint-date" class="input-title">
+        </div>
+
+        <!-- ERREUR A-17 : groupe de boutons radio sans <fieldset> ni <legend> -->
+        <div>
+          <div class="title-3">Type de billet <span class="span-star">*</span></div>
+          <div class="title-4" style="display: flex; flex-direction: column; gap: 8px;">
+            <!-- ERREUR A-18 : aria-required="true" présent MAIS required HTML absent (incohérence) -->
+            <label>
+              <input type="radio" name="tarif" value="adulte" aria-required="true"> Adulte — 12 €
+            </label>
+            <label class="title-4">
+              <input type="radio" name="tarif" value="reduit"> Réduit — 8 €
+            </label>
+            <label class="title-4">
+              <input type="radio" name="tarif" value="enfant"> Enfant (- 12 ans) — Gratuit
+            </label>
+          </div>
+        </div>
+
+        <!-- ERREUR A-19 : message d'erreur dynamique sans role="alert" ni aria-live -->
+        <div id="form-error">
+          Veuillez remplir tous les champs obligatoires.
+        </div>
+
+        <!-- bouton de soumission : correct ici (pour que le formulaire fonctionne) -->
+        <!-- ERREUR : pas de class="open-modal" donc le JS d'ouverture de modale ne s'active pas via initModal -->
+        <button type="submit" class="open-modal">
+          Confirmer la réservation
+        </button>
+
+      </form>
+
+    </div>
+
+  </main>
+
+    <footer class="footer">
+      <div class="nav-footer">
+        <a href="index.html" class="links-footer">Accueil</a>
+        <a href="expositions.html" class="links-footer">Expositions</a>
+        <a href="billetterie.html" class="links-footer">Billetterie</a>
+      </div>
+      <div>© 2026 L'Atelier des Arts</div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
