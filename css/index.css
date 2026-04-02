@@ -144,3 +144,46 @@
     color: #1a1a1a;
     margin-bottom: 30px;
 }
+
+/* CARD */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 40px;
+}
+
+.card {
+    border: 1px solid #eee;
+    overflow: hidden;
+}
+
+.card img {
+    width: 60%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-desc{
+    padding: 15px;
+}
+
+.card-desc h3{
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.card-desc h4{
+    color: #aaa;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.card-desc a{
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+}

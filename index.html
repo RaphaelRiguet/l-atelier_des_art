@@ -75,34 +75,32 @@
 
       <h2>Expositions en cours</h2> <!--Changement de la balise "div" en "h2" et suppression du css dans la balise-->
 
-      <!-- ERREUR S-06 : cards en divs imbriqués au lieu de ul/li -->
-      <div class="cards-grid">
-        <ul class="card"> <!--Changement de la balise "ul" en "li"-->
-          <img src="./img/Lumiere-du-nord.jpg" alt="Peinture nommé Lumière du nord"> <!--Ajout d'un alt-->
-          <div style="padding: 15px;">
-            <div style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 8px;">Lumières du Nord</div>
-            <div style="color: #aaa; font-size: 13px; margin-bottom: 12px;">Jusqu'au 30 juin 2026</div>
-            <!-- ERREUR S-07 : div cliquable au lieu de <a> ou <button> -->
-            <div class="btn" onclick="window.location='expositions.html'" style="font-size: 13px; cursor: pointer;">Voir l'exposition</div>
+      <ul class="cards-grid"> <!--Changement de la balise "div" en "ul"-->
+        <li class="card"> <!--Changement de la balise "div" en "li"-->
+          <img src="./img/Lumiere-du-nord.jpg" alt="Peinture nommé Lumière du nord" class="card-img"> <!--Ajout d'un alt-->
+          <div class="card-desc"> <!--Suppression du css dans la balise-->
+            <h3>Lumières du Nord</h3>
+            <h4>Jusqu'au 30 juin 2026</h4> <!--Supression du css dans la balise et changement de la balise "div" en "h4"-->
+            <a class="btn" href="expositions.html">Voir l'exposition</a> <!--Changement de la balise en "a", "onclick" remplacé par "href" et supression du style dans la balise-->
           </div>
-        </ul>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=600" alt="image">
-          <div style="padding: 15px;">
-            <div style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 8px;">Abstract Forms</div>
-            <div style="color: #aaa; font-size: 13px; margin-bottom: 12px;">Jusqu'au 15 août 2026</div>
-            <div class="btn" onclick="window.location='expositions.html'" style="font-size: 13px; cursor: pointer;">Voir l'exposition</div>
+        </li>
+        <li class="card">
+          <img src="./img/abstract-forms.jpg" alt="Peinture de forme abstraite">
+          <div class="card-desc">
+            <h3>Abstract Forms</h3>
+            <h4>Jusqu'au 15 août 2026</h4>
+            <a class="btn" href="expositions.html">Voir l'exposition</a>
           </div>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1565035010268-a3816f98589a?w=600" alt="image">
-          <div style="padding: 15px;">
-            <div style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 8px;">Photographies Urbaines</div>
-            <div style="color: #aaa; font-size: 13px; margin-bottom: 12px;">Permanent</div>
-            <div class="btn" onclick="window.location='expositions.html'" style="font-size: 13px; cursor: pointer;">Voir l'exposition</div>
+        </li>
+        <li class="card">
+          <img src="./img/photographie-urbaine.jpg" alt="Photographie Urbaine">
+          <div class="card-desc">
+            <h3>Photographies Urbaines</h3>
+            <h4>Permanent</h4>
+            <a class="btn" href="expositions.html">Voir l'exposition</a>
           </div>
-        </div>
-      </div>
+        </li>
+      </ul>
     </section>
 
     <!-- CITATION -->
