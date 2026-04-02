@@ -80,3 +80,27 @@
     color: #1a1a1a;
     margin-bottom: 20px;
 }
+
+.question{
+    display: flex;
+    flex-direction: column;
+}
+
+.information{
+    color: #1a1a1a;
+    line-height: 1.7;
+}
+
+.information_titre{
+    color: #1a1a1a;
+}
+
+.icon{
+    color: #1a1a1a;
+}
+
+.bouton{
+    color: #c8a96e;
+    font-weight: bold;
+}
+
