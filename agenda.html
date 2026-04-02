@@ -12,19 +12,19 @@
 </head>
 <body>
 
-  <!-- ERREUR S-02 : <div> au lieu de <header> -->
-  <div class="nav" style="position: sticky; top: 0; z-index: 50;">
-    <!-- ERREUR S-01 : pas de <nav> -->
-    <div style="font-size: 22px; color: #c8a96e; font-weight: bold;">L'Atelier des Arts</div>
-    <div>
+  <header class="nav">
+
+
+    <h1>L'Atelier des Arts</h1>
+    <nav>
       <a href="index.html">Accueil</a>
       <a href="expositions.html">Expositions</a>
       <a href="billetterie.html">Billetterie</a>
-      <a href="agenda.html" style="color: #fff;">Agenda</a>
-      <a href="apropos.html">À propos</a>
-    </div>
-    <!-- ERREUR : pas de lien d'évitement -->
-  </div>
+      <a href="agenda.html">Agenda</a>
+      <a href="apropos.html" class="active">À propos</a>
+    </nav>
+
+  </header>
 
     <!-- CORRECTION : CHANGEMENT DE DIV EN MAIN -->
   <main class="main">
@@ -79,83 +79,129 @@
 
     </main>
 
-    <!-- FAQ ACCORDÉON DÉFECTUEUX -->
+
     <h2 class="titre_question">Questions fréquentes</h2>
 
-    <div style="display: flex; flex-direction: column;">
+    <div class="question">
 
       <div class="accordion-item">
-        <!-- ERREUR A-14 : <div> sans role="button" ni tabindex="0" -->
-        <!-- ERREUR A-15 : aria-expanded absent -->
-        <!-- ERREUR A-16 : aria-controls absent -->
-        <div class="accordion-trigger">
-          <span>Quels sont les horaires d'ouverture ?</span>
-          <!-- ERREUR S-09 : <i> au lieu d'un élément sémantique pour l'indicateur -->
-          <i style="font-style: normal; color: #aaa;">+</i>
-        </div>
-        <div class="accordion-content" id="faq-1">
-          <div style="color: #666; line-height: 1.7;">
-            Le musée est ouvert du mardi au dimanche de 10h à 18h (fermeture des caisses à 17h30).
-            Fermé le lundi et les jours fériés.
-          </div>
-        </div>
-      </div>
+  <button
+    type="button"
+    class="accordion-trigger"
+    aria-expanded="true" 
+    aria-controls="faq-1-content"
+    id="faq-1-trigger">
+    
+    <span class="information_titre">Quels sont les horaires d'ouverture ?</span>
+    <span class="icon" aria-hidden="true">+</span>
+  </button>
+
+  <div 
+    class="accordion-content" 
+    id="faq-1-content" 
+    role="region" 
+    aria-labelledby="faq-1-trigger">
+    <p class="information">
+      Le musée est ouvert du mardi au dimanche de 10h à 18h.
+    </p>
+  </div>
+</div>
 
       <div class="accordion-item">
-        <!-- ERREUR A-14, A-15, A-16 répétées -->
-        <div class="accordion-trigger">
-          <span>Comment réserver un billet en ligne ?</span>
-          <i style="font-style: normal; color: #aaa;">+</i>
-        </div>
-        <div class="accordion-content" id="faq-2">
-          <div style="color: #666; line-height: 1.7;">
-            Rendez-vous sur notre page <a href="billetterie.html" style="color: #c8a96e;">Billetterie</a>.
-            Choisissez votre tarif, renseignez vos informations et validez. Un email de confirmation vous sera envoyé.
-          </div>
-        </div>
-      </div>
+  <button 
+    type="button" 
+    class="accordion-trigger" 
+    aria-expanded="true" 
+    aria-controls="faq-2-content" 
+    id="faq-2-trigger">
+
+    <span class="information_titre">Comment réserver un billet en ligne ?</span>
+    <span class="icon" aria-hidden="true">+</span>
+  </button>
+  
+  <div 
+    class="accordion-content" 
+    id="faq-2-content" 
+    role="region" 
+    aria-labelledby="faq-2-trigger">
+    
+    <div class="information">
+      Rendez-vous sur notre page Billetterie.
+      Choisissez votre tarif, renseignez vos informations et validez.
+    </div>
+    
+    <a class="bouton" href="billetterie.html">Billetterie</a>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <button 
+    type="button" 
+    class="accordion-trigger" 
+    aria-expanded="true" 
+    aria-controls="faq-3-content" 
+    id="faq-3-trigger">
+    <span class="information_titre">Le musée est-il accessible aux personnes à mobilité réduite ?</span>
+    <span class="icon" aria-hidden="true">+</span>
+  </button>
+  
+  <div 
+    class="accordion-content" 
+    id="faq-3-content" 
+    role="region" 
+    aria-labelledby="faq-3-trigger">
+
+    <div class="information">
+      Oui, le musée est entièrement accessible en fauteuil roulant. Ascenseur disponible à l'entrée principale.
+    </div>
+  </div>
+</div>
 
       <div class="accordion-item">
-        <div class="accordion-trigger">
-          <span>Le musée est-il accessible aux personnes à mobilité réduite ?</span>
-          <i style="font-style: normal; color: #aaa;">+</i>
-        </div>
-        <div class="accordion-content" id="faq-3">
-          <div style="color: #666; line-height: 1.7;">
-            Oui, le musée est entièrement accessible en fauteuil roulant. Ascenseur disponible à l'entrée principale.
-            Des audioguides et des transcriptions en braille sont disponibles à l'accueil.
-          </div>
-        </div>
-      </div>
+  <button 
+    type="button" 
+    class="accordion-trigger" 
+    aria-expanded="true" 
+    aria-controls="faq-4-content" 
+    id="faq-4-trigger">
+    
+    <span class="information_titre">Peut-on photographier les œuvres ?</span>
+    <span class="icon" aria-hidden="true">+</span>
+  </button>
+  
+  <div 
+    class="accordion-content" 
+    id="faq-4-content" 
+    role="region" 
+    aria-labelledby="faq-4-trigger">
+    
+    <div class="information">
+      La photographie est autorisée sans flash dans toutes les salles, à des fins non commerciales uniquement.
+      L'utilisation de trépied est interdite.
+    </div>
+  </div>
+</div>
 
-      <div class="accordion-item">
-        <div class="accordion-trigger">
-          <span>Peut-on photographier les œuvres ?</span>
-          <i style="font-style: normal; color: #aaa;">+</i>
-        </div>
-        <div class="accordion-content" id="faq-4">
-          <div style="color: #666; line-height: 1.7;">
-            La photographie est autorisée sans flash dans toutes les salles, à des fins non commerciales uniquement.
-            L'utilisation de trépied est interdite.
-          </div>
-        </div>
+  <!-- CONTACT -->
+    <div class="contact-section">
+      <h2 class="contact-title">Nous contacter</h2>
+      <div class="contact-info">
+        12 rue des Beaux-Arts, 75006 Paris<br>
+        <a href="tel:+33142000000" aria-label="Téléphone : 01 42 00 00 00" class="highlight-link">01 42 00 00 00</a><br>
+        <a href="mailto:contact@atelierdesarts.fr" class="highlight-link">contact@atelierdesarts.fr</a>
       </div>
-
     </div>
 
-  </div>
+  </main>
 
-  <!-- ERREUR S-03 : div au lieu de <footer> -->
-  <div class="footer" style="margin-top: 60px;">
-    <!-- ERREUR S-11 : id="nav" dupliqué -->
-    <div id="nav" style="margin-bottom: 10px;">
-      <a href="index.html" style="color: #777; margin: 0 10px;">Accueil</a>
-      <a href="expositions.html" style="color: #777; margin: 0 10px;">Expositions</a>
-      <a href="billetterie.html" style="color: #777; margin: 0 10px;">Billetterie</a>
-      <a href="agenda.html" style="color: #777; margin: 0 10px;">Agenda</a>
-    </div>
-    <div>© 2026 L'Atelier des Arts</div>
-  </div>
+  <footer class="footer">
+    <ul id="footer-nav">
+      <li><a href="index.html" class="footer-link">Accueil</a></li>
+      <li><a href="expositions.html" class="footer-link">Expositions</a></li>
+      <li><a href="apropos.html" class="footer-link">À propos</a></li>
+    </ul>
+    <div class="copyright">© 2026 L'Atelier des Arts</div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
