@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Expositions — L'Atelier des Arts</title>
+  <!-- ERREUR : lang absent sur <html> -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ERREUR S-02 : <div> au lieu de <header> -->
+  <div class="nav" style="position: sticky; top: 0; z-index: 50;">
+    <!-- ERREUR S-01 : pas de <nav> -->
+    <div style="font-size: 22px; color: #c8a96e; font-weight: bold;">L'Atelier des Arts</div>
+    <div>
+      <a href="index.html">Accueil</a>
+      <a href="expositions.html" style="color: #fff;">Expositions</a>
+      <a href="billetterie.html">Billetterie</a>
+      <a href="agenda.html">Agenda</a>
+      <a href="apropos.html">À propos</a>
+    </div>
+    <!-- ERREUR : pas de lien d'évitement -->
+  </div>
+
+  <!-- ERREUR S-04 : <div> au lieu de <main> -->
+  <div id="contenu" style="padding: 40px;">
+
+    <!-- ERREUR : pas de H1, titre en div -->
+    <div style="font-size: 36px; font-weight: bold; color: #1a1a1a; margin-bottom: 10px;">Nos expositions</div>
+    <div style="color: #999; margin-bottom: 40px;">Découvrez nos trois espaces d'exposition permanents et temporaires.</div>
+
+    <!-- SYSTÈME DE TABS DÉFECTUEUX -->
+    <!-- ERREUR A-05 : pas de role="tablist" sur le conteneur -->
+    <div class="tabs-list" style="margin-bottom: 0;">
+      <!-- ERREUR A-06 : <div> sans role="tab", sans tabindex, sans aria-selected -->
+      <div class="tab active" data-target="panel-lumieres" style="font-size: 15px;">Lumières du Nord</div>
+      <div class="tab" data-target="panel-abstract" style="font-size: 15px;">Abstract Forms</div>
+      <div class="tab" data-target="panel-urbain" style="font-size: 15px;">Photographies Urbaines</div>
+    </div>
+
+    <!-- ERREUR A-07 : pas de role="tabpanel" ni aria-labelledby -->
+    <div id="panel-lumieres" class="tab-panel active" style="border: 1px solid #eee; border-top: none;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; padding: 30px;">
+        <div>
+          <!-- ERREUR I-02 : alt non descriptif -->
+          <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=600" alt="photo exposition" style="width: 100%; border-radius: 4px;">
+        </div>
+        <div>
+          <!-- ERREUR : pas de titre hiérarchique (H2), div stylé -->
+          <div style="font-size: 24px; font-weight: bold; color: #1a1a1a; margin-bottom: 15px;">Lumières du Nord</div>
+          <div style="color: #777; line-height: 1.7; margin-bottom: 20px;">
+            Une exploration lumineuse des paysages scandinaves à travers les œuvres de six artistes contemporains.
+            <!-- ERREUR S-10 : <br><br> au lieu de paragraphes -->
+            <br><br>
+            Commissariat : Marie Durand. Vernissage le 14 mars 2026.
+          </div>
+          <div style="color: #aaa; font-size: 13px; margin-bottom: 20px;">Jusqu'au 30 juin 2026 — Salle A</div>
+          <!-- ERREUR S-07 : div cliquable au lieu de <a> ou <button> -->
+          <div class="btn" onclick="window.location='billetterie.html'" style="cursor: pointer;">Réserver ma visite</div>
+        </div>
+      </div>
+      <div style="padding: 0 30px 30px;">
+        <div style="font-size: 18px; font-weight: bold; margin-bottom: 20px; color: #333;">Œuvres présentées</div>
+        <!-- ERREUR S-06 : grille de divs imbriqués au lieu de ul/li -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+          <div>
+            <!-- ERREUR I-01 : alt absent -->
+            <img src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=400" style="width: 100%; height: 150px; object-fit: cover;">
+            <div style="font-size: 13px; color: #888; padding: 8px 0;">Aurora, 2024 — Sigrid Larsson</div>
+          </div>
+          <div>
+            <!-- ERREUR I-03 : image informative avec alt="" vide -->
+            <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=400" alt="" style="width: 100%; height: 150px; object-fit: cover;">
+            <div style="font-size: 13px; color: #888; padding: 8px 0;">Solstice, 2023 — Erik Bjorn</div>
+          </div>
+          <div>
+            <!-- ERREUR I-02 : alt non pertinent -->
+            <img src="https://images.unsplash.com/photo-1565035010268-a3816f98589a?w=400" alt="image3" style="width: 100%; height: 150px; object-fit: cover;">
+            <div style="font-size: 13px; color: #888; padding: 8px 0;">Fjord, 2025 — Astrid Nielsen</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ERREUR A-07 : pas de role="tabpanel" ni aria-labelledby -->
+    <div id="panel-abstract" class="tab-panel" style="border: 1px solid #eee; border-top: none;">
+      <div style="padding: 30px;">
+        <div style="font-size: 24px; font-weight: bold; color: #1a1a1a; margin-bottom: 15px;">Abstract Forms</div>
+        <div style="color: #777; line-height: 1.7; margin-bottom: 20px;">
+          Formes géométriques et couleurs vives — une plongée dans l'art abstrait contemporain.
+          <br><br>
+          Six artistes internationaux, vingt œuvres inédites présentées pour la première fois en France.
+        </div>
+        <div style="color: #aaa; font-size: 13px; margin-bottom: 20px;">Jusqu'au 15 août 2026 — Salle B</div>
+        <div class="btn" onclick="window.location='billetterie.html'" style="cursor: pointer;">Réserver ma visite</div>
+      </div>
+    </div>
+
+    <!-- ERREUR A-07 : pas de role="tabpanel" ni aria-labelledby -->
+    <div id="panel-urbain" class="tab-panel" style="border: 1px solid #eee; border-top: none;">
+      <div style="padding: 30px;">
+        <div style="font-size: 24px; font-weight: bold; color: #1a1a1a; margin-bottom: 15px;">Photographies Urbaines</div>
+        <div style="color: #777; line-height: 1.7; margin-bottom: 20px;">
+          Collection permanente de photographies documentant l'architecture urbaine mondiale de 1950 à nos jours.
+          <br><br>
+          Plus de 200 tirages originaux, de Cartier-Bresson aux photographes de rue contemporains.
+        </div>
+        <div style="color: #aaa; font-size: 13px; margin-bottom: 20px;">Exposition permanente — Salle C</div>
+        <div class="btn" onclick="window.location='billetterie.html'" style="cursor: pointer;">Réserver ma visite</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ERREUR S-03 : div au lieu de <footer> -->
+  <div class="footer" style="margin-top: 60px;">
+    <!-- ERREUR S-11 : id="nav" dupliqué -->
+    <div id="nav" style="margin-bottom: 10px;">
+      <a href="index.html" style="color: #777; margin: 0 10px;">Accueil</a>
+      <a href="expositions.html" style="color: #777; margin: 0 10px;">Expositions</a>
+      <a href="billetterie.html" style="color: #777; margin: 0 10px;">Billetterie</a>
+    </div>
+    <div>© 2026 L'Atelier des Arts</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

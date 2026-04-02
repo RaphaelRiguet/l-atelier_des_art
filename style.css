@@ -1,0 +1,217 @@
+/* style.css — L'Atelier des Arts */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #666;
+  background: #fff;
+}
+
+/* Navigation */
+.nav {
+  background: #1a1a1a;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav a {
+  color: #999;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 14px;
+}
+
+.nav a:hover {
+  color: #fff;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  color: #ccc;
+}
+
+/* Cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 40px;
+}
+
+.card {
+  border: 1px solid #eee;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Boutons */
+.btn {
+  background: #c8a96e;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* Carrousel */
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.carousel-slide {
+  min-width: 100%;
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.carousel-btn {
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Tabs */
+.tabs-list {
+  display: flex;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.tab.active {
+  color: #1a1a1a;
+  border-bottom: 2px solid #c8a96e;
+}
+
+.tab-panel {
+  display: none;
+  padding: 20px;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+/* Modale */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 100;
+}
+
+.modal-overlay.open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-box {
+  background: #fff;
+  padding: 30px;
+  max-width: 500px;
+  width: 90%;
+}
+
+/* Accordéon */
+.accordion-item {
+  border-bottom: 1px solid #eee;
+}
+
+.accordion-trigger {
+  padding: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  background: #f9f9f9;
+  color: #888;
+}
+
+.accordion-content {
+  display: none;
+  padding: 15px;
+}
+
+.accordion-content.open {
+  display: block;
+}
+
+/* Footer */
+.footer {
+  background: #1a1a1a;
+  color: #777;
+  padding: 30px;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* Timeline */
+.timeline {
+  padding: 40px;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.timeline-year {
+  color: #aaa;
+  font-size: 12px;
+  min-width: 60px;
+}
+
+/* Focus outline supprimé — ERREUR INTENTIONNELLE */
+*:focus {
+  outline: none;
+}

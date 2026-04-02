@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>À propos — L'Atelier des Arts</title>
+  <!-- ERREUR : lang absent sur <html> -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ERREUR S-02 : <div> au lieu de <header> -->
+  <div class="nav" style="position: sticky; top: 0; z-index: 50;">
+    <!-- ERREUR S-01 : pas de <nav> -->
+    <div style="font-size: 22px; color: #c8a96e; font-weight: bold;">L'Atelier des Arts</div>
+    <div>
+      <a href="index.html">Accueil</a>
+      <a href="expositions.html">Expositions</a>
+      <a href="billetterie.html">Billetterie</a>
+      <a href="agenda.html">Agenda</a>
+      <a href="apropos.html" style="color: #fff;">À propos</a>
+    </div>
+    <!-- ERREUR : pas de lien d'évitement -->
+  </div>
+
+  <!-- ERREUR S-04 : <div> au lieu de <main> -->
+  <div id="contenu">
+
+    <!-- HERO À PROPOS -->
+    <div style="position: relative; height: 300px; overflow: hidden; margin-bottom: 60px;">
+      <!-- ERREUR I-03 : image décorative avec alt non vide ("musee") au lieu de alt="" -->
+      <img src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=1400" alt="musee" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.5);">
+      <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
+        <!-- ERREUR : pas de H1, titre en div -->
+        <div style="font-size: 40px; font-weight: bold; color: #fff; text-align: center;">Notre histoire</div>
+      </div>
+    </div>
+
+    <!-- INTRO -->
+    <div style="max-width: 700px; margin: 0 auto 60px; padding: 0 40px; text-align: center;">
+      <div style="color: #666; line-height: 1.8; font-size: 16px;">
+        Fondé en 1987, L'Atelier des Arts est un musée municipal dédié à la création contemporaine.
+        <!-- ERREUR S-10 : <br><br> au lieu de paragraphes -->
+        <br><br>
+        Notre mission est de rendre l'art accessible à tous les publics, quels que soient leur origine ou leur condition.
+        <br><br>
+        <!-- ERREUR C-04 : couleur très faible en inline -->
+        <span style="color: #bbb;">Membre du réseau national des musées d'art contemporain depuis 1992.</span>
+      </div>
+    </div>
+
+    <!-- TIMELINE -->
+    <div style="background: #f9f9f9; padding: 60px 40px; margin-bottom: 60px;">
+      <!-- ERREUR : pas de titre hiérarchique (H2), div stylé -->
+      <div style="font-size: 28px; font-weight: bold; color: #1a1a1a; margin-bottom: 40px; text-align: center;">Les grandes dates</div>
+      <!-- ERREUR S-06 : timeline en divs au lieu d'une liste structurée -->
+      <div class="timeline" style="max-width: 700px; margin: 0 auto; padding: 0;">
+
+        <div class="timeline-item">
+          <div class="timeline-year">1987</div>
+          <div>
+            <div style="font-size: 16px; font-weight: bold; color: #333; margin-bottom: 5px;">Fondation du musée</div>
+            <div style="color: #777; line-height: 1.6;">Ouverture dans l'ancien hôtel particulier du 12 rue des Beaux-Arts.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">1995</div>
+          <div>
+            <div style="font-size: 16px; font-weight: bold; color: #333; margin-bottom: 5px;">Extension des salles</div>
+            <div style="color: #777; line-height: 1.6;">Création de la salle B dédiée à l'art abstrait contemporain.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">2008</div>
+          <div>
+            <div style="font-size: 16px; font-weight: bold; color: #333; margin-bottom: 5px;">Rénovation complète</div>
+            <div style="color: #777; line-height: 1.6;">Mise aux normes PMR et rénovation de la façade classée.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">2019</div>
+          <div>
+            <div style="font-size: 16px; font-weight: bold; color: #333; margin-bottom: 5px;">Lancement numérique</div>
+            <div style="color: #777; line-height: 1.6;">Premier site web, billets en ligne et visites virtuelles 360°.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">2026</div>
+          <div>
+            <div style="font-size: 16px; font-weight: bold; color: #333; margin-bottom: 5px;">Nouvelle identité</div>
+            <div style="color: #777; line-height: 1.6;">Refonte complète du site web et nouveaux outils numériques.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ÉQUIPE -->
+    <div style="padding: 0 40px 60px; max-width: 1000px; margin: 0 auto;">
+      <div style="font-size: 28px; font-weight: bold; color: #1a1a1a; margin-bottom: 40px; text-align: center;">Notre équipe</div>
+
+      <!-- ERREUR S-06 : grille de divs au lieu de ul/li -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+
+        <div style="text-align: center;">
+          <!-- ERREUR I-04 : <img> utilisée comme bouton cliquable sans alt ni role -->
+          <img src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=300&h=300&fit=crop" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; cursor: pointer;" onclick="alert('Profil Claire Moreau')">
+          <div style="font-size: 16px; font-weight: bold; color: #333; margin-top: 12px;">Claire Moreau</div>
+          <!-- ERREUR C-04 : contraste insuffisant -->
+          <div style="color: #bbb; font-size: 13px; margin-top: 4px;">Directrice</div>
+        </div>
+
+        <div style="text-align: center;">
+          <!-- ERREUR I-02 : alt non descriptif -->
+          <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=300&h=300&fit=crop" alt="photo" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover;">
+          <div style="font-size: 16px; font-weight: bold; color: #333; margin-top: 12px;">Thomas Klein</div>
+          <div style="color: #bbb; font-size: 13px; margin-top: 4px;">Commissaire d'exposition</div>
+        </div>
+
+        <div style="text-align: center;">
+          <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=300&h=300&fit=crop" alt="photo" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover;">
+          <div style="font-size: 16px; font-weight: bold; color: #333; margin-top: 12px;">Sara Benali</div>
+          <div style="color: #bbb; font-size: 13px; margin-top: 4px;">Responsable numérique</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div style="background: #1a1a1a; color: #fff; padding: 60px 40px; text-align: center;">
+      <div style="font-size: 24px; font-weight: bold; margin-bottom: 20px;">Nous contacter</div>
+      <div style="color: #888; line-height: 2; font-size: 15px;">
+        12 rue des Beaux-Arts, 75006 Paris<br>
+        <!-- ERREUR : lien téléphone sans aria-label descriptif -->
+        <a href="tel:+33142000000" style="color: #c8a96e;">01 42 00 00 00</a><br>
+        <a href="mailto:contact@atelierdesarts.fr" style="color: #c8a96e;">contact@atelierdesarts.fr</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ERREUR S-03 : div au lieu de <footer> -->
+  <div class="footer">
+    <!-- ERREUR S-11 : id="nav" dupliqué -->
+    <div id="nav" style="margin-bottom: 10px;">
+      <a href="index.html" style="color: #777; margin: 0 10px;">Accueil</a>
+      <a href="expositions.html" style="color: #777; margin: 0 10px;">Expositions</a>
+      <a href="apropos.html" style="color: #777; margin: 0 10px;">À propos</a>
+    </div>
+    <div>© 2026 L'Atelier des Arts</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

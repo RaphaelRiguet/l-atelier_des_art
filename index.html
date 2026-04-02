@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>L'Atelier des Arts</title>
+  <!-- ERREUR : lang absent sur <html> -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ERREUR S-02 : <div> au lieu de <header> -->
+  <div class="nav" style="position: sticky; top: 0; z-index: 50;">
+    <!-- ERREUR S-01 : <div> au lieu de <nav> -->
+    <div style="font-size: 22px; color: #c8a96e; font-weight: bold;">L'Atelier des Arts</div>
+    <div>
+      <a href="index.html" style="color: #fff;">Accueil</a>
+      <a href="expositions.html">Expositions</a>
+      <a href="billetterie.html">Billetterie</a>
+      <a href="agenda.html">Agenda</a>
+      <a href="apropos.html">À propos</a>
+    </div>
+    <!-- ERREUR : pas de lien d'évitement -->
+  </div>
+
+  <!-- ERREUR S-04 : <div> au lieu de <main> -->
+  <div id="contenu">
+
+    <!-- HERO -->
+    <div class="hero" style="margin-bottom: 40px;">
+      <!-- ERREUR I-02 : alt non descriptif -->
+      <img src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=1400" alt="image">
+      <div class="hero-content" style="background: rgba(0,0,0,0.4); padding: 20px;">
+        <!-- ERREUR : pas de H1, titre en div stylé -->
+        <div style="font-size: 36px; color: #fff; font-weight: bold; margin-bottom: 10px;">Bienvenue au musée</div>
+        <div style="color: #ddd; font-size: 16px;">Art contemporain • Expositions permanentes et temporaires</div>
+      </div>
+    </div>
+
+    <!-- CARROUSEL -->
+    <!-- ERREUR A-01 : pas de role="region" ni aria-label -->
+    <div class="carousel" style="margin: 40px 0; background: #111;">
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <!-- ERREUR I-03 : image informative avec alt="" vide -->
+          <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=1200" alt="" style="width: 100%; height: 400px; object-fit: cover; opacity: 0.8;">
+          <div style="position: absolute; bottom: 20px; left: 20px; color: #fff;">
+            <b>Lumières du Nord</b> — Salle A
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <!-- ERREUR I-02 : alt non descriptif -->
+          <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=1200" alt="photo" style="width: 100%; height: 400px; object-fit: cover; opacity: 0.8;">
+          <div style="position: absolute; bottom: 20px; left: 20px; color: #fff;">
+            <b>Abstract Forms</b> — Salle B
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="https://images.unsplash.com/photo-1565035010268-a3816f98589a?w=1200" alt="photo3" style="width: 100%; height: 400px; object-fit: cover; opacity: 0.8;">
+          <div style="position: absolute; bottom: 20px; left: 20px; color: #fff;">
+            <b>Photographies Urbaines</b> — Salle C
+          </div>
+        </div>
+      </div>
+
+      <!-- ERREUR A-02 : boutons sans aria-label -->
+      <div class="carousel-controls" style="padding: 0 10px;">
+        <button class="carousel-prev carousel-btn">&#8249;</button>
+        <div style="display: flex; gap: 8px; align-self: flex-end; padding: 10px;">
+          <!-- ERREUR A-04 : dots non masqués aux AT, pas de aria-hidden -->
+          <span style="width: 10px; height: 10px; border-radius: 50%; background: #fff; display: inline-block;"></span>
+          <span style="width: 10px; height: 10px; border-radius: 50%; background: #888; display: inline-block;"></span>
+          <span style="width: 10px; height: 10px; border-radius: 50%; background: #888; display: inline-block;"></span>
+        </div>
+        <button class="carousel-next carousel-btn">&#8250;</button>
+      </div>
+      <!-- ERREUR A-03 : aria-live absent -->
+    </div>
+
+    <!-- EXPOSITIONS EN COURS -->
+    <div style="padding: 0 40px 40px;">
+      <!-- ERREUR : pas de H2, utilisation de div stylé -->
+      <div style="font-size: 28px; font-weight: bold; color: #1a1a1a; margin-bottom: 30px;">Expositions en cours</div>
+
+      <!-- ERREUR S-06 : cards en divs imbriqués au lieu de ul/li -->
+      <div class="cards-grid">
+        <div class="card">
+          <!-- ERREUR I-01 : alt absent -->
+          <img src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=600">
+          <div style="padding: 15px;">
+            <div style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 8px;">Lumières du Nord</div>
+            <div style="color: #aaa; font-size: 13px; margin-bottom: 12px;">Jusqu'au 30 juin 2026</div>
+            <!-- ERREUR S-07 : div cliquable au lieu de <a> ou <button> -->
+            <div class="btn" onclick="window.location='expositions.html'" style="font-size: 13px; cursor: pointer;">Voir l'exposition</div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=600" alt="image">
+          <div style="padding: 15px;">
+            <div style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 8px;">Abstract Forms</div>
+            <div style="color: #aaa; font-size: 13px; margin-bottom: 12px;">Jusqu'au 15 août 2026</div>
+            <div class="btn" onclick="window.location='expositions.html'" style="font-size: 13px; cursor: pointer;">Voir l'exposition</div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1565035010268-a3816f98589a?w=600" alt="image">
+          <div style="padding: 15px;">
+            <div style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 8px;">Photographies Urbaines</div>
+            <div style="color: #aaa; font-size: 13px; margin-bottom: 12px;">Permanent</div>
+            <div class="btn" onclick="window.location='expositions.html'" style="font-size: 13px; cursor: pointer;">Voir l'exposition</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CITATION -->
+    <!-- ERREUR S-08 : div au lieu de blockquote -->
+    <div class="quote" style="background: #f5f0e8; padding: 40px; text-align: center; margin: 0 40px 40px;">
+      <div style="font-size: 20px; color: #888; font-style: italic; margin-bottom: 10px;">
+        "L'art est le mensonge qui nous permet de réaliser la vérité."
+      </div>
+      <!-- ERREUR S-09 : <b> au lieu de <strong> -->
+      <div style="color: #aaa; font-size: 13px;">— <b>Pablo Picasso</b></div>
+    </div>
+
+    <!-- ACTUALITÉS -->
+    <div style="padding: 0 40px 60px;">
+      <div style="font-size: 28px; font-weight: bold; color: #1a1a1a; margin-bottom: 30px;">Actualités</div>
+      <!-- ERREUR S-10 : <br><br> pour espacer au lieu de paragraphes -->
+      <div style="color: #666; font-size: 15px; line-height: 1.8;">
+        <b>Nouveau : Atelier jeunesse</b> — Inscriptions ouvertes pour avril 2026.<br><br>
+        <b>Visite nocturne</b> — Samedi 18 avril, de 20h à minuit.<br><br>
+        <!-- ERREUR C-04 : couleur insuffisante en inline -->
+        <span style="color: #bbb;">Fermeture exceptionnelle le lundi 6 avril (Pâques).</span>
+      </div>
+    </div>
+
+  </div>
+  <!-- fin #contenu -->
+
+  <!-- ERREUR S-03 : div au lieu de <footer> -->
+  <div class="footer">
+    <!-- ERREUR S-11 : id="nav" dupliqué (aussi dans les autres pages) -->
+    <div id="nav" style="margin-bottom: 10px;">
+      <a href="index.html" style="color: #777; margin: 0 10px;">Accueil</a>
+      <a href="expositions.html" style="color: #777; margin: 0 10px;">Expositions</a>
+      <a href="billetterie.html" style="color: #777; margin: 0 10px;">Billetterie</a>
+      <a href="apropos.html" style="color: #777; margin: 0 10px;">À propos</a>
+    </div>
+    <div>© 2026 L'Atelier des Arts — 12 rue des Beaux-Arts, 75006 Paris — 01 42 00 00 00</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
